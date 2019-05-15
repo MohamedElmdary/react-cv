@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Node } from "../../interfaces/node";
 import Tree from "./tree";
+import "./branch.css";
 
 interface Props {
   branch: Node;
@@ -11,21 +12,18 @@ class Branch extends Component<Props> {
   public render() {
     let remove = null;
     if (this.props.branch.lastItem) {
-      const width = 50 * this.props.index - 20 * this.props.index;
       remove = (
         <div
           style={{
             position: "absolute",
-            height: "calc(100% - 50px)",
-            width: `${width}px`,
-            background: "blue",
+            height: "calc(100% - 30px)",
+            width: `2px`,
+            background: "white",
             zIndex: 9,
-            top: "50px",
-            left: `${-width / 2}px`
+            top: "40px",
+            left: `-2px`
           }}
-        >
-          sda
-        </div>
+        />
       );
     }
     return (
@@ -33,15 +31,17 @@ class Branch extends Component<Props> {
         {remove}
         <div
           style={{
-            paddingLeft: "25px",
-            paddingTop: "20px"
+            paddingLeft: "35px",
+            paddingTop: "15px"
           }}
         >
           <p style={{ position: "relative" }}>
             <span
+              className="node-point"
               style={{
                 position: "absolute",
-                left: "-31px",
+                left: "-15px",
+                top: "5px",
                 height: "10px",
                 width: "10px",
                 background: "#c0392b",

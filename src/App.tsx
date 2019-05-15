@@ -71,7 +71,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Tree tree={markLastItem(tree)} index={1} />
+      <Tree tree={markLastItem(tree)} index={0} />
     </div>
   );
 };

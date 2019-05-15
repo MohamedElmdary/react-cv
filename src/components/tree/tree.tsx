@@ -9,11 +9,16 @@ interface Props {
 
 class Tree extends Component<Props> {
   public render() {
+    const styles: any = {};
+    if (this.props.index) {
+      styles.marginLeft = "23px";
+      styles.marginTop = "-5px";
+    }
     return (
       <div
         style={{
           borderLeft: "2px solid #c0392b",
-          marginLeft: `${25 * this.props.index}px`
+          ...styles
         }}
       >
         {this.props.tree.map(node => (
