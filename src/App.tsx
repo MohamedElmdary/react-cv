@@ -1,26 +1,79 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Tree from "./components/tree/tree";
+import { Node } from "./interfaces/node";
+import { markLastItem } from "./helpers/markLastItem";
 
 const App: React.FC = () => {
+  const tree: Node[] = [
+    {
+      content: "first",
+      children: [
+        {
+          content: "first 2",
+          children: []
+        }
+      ]
+    },
+    {
+      content: "second",
+      children: [
+        {
+          content: "third",
+          children: [
+            {
+              content: "forth7",
+              children: []
+            },
+            {
+              content: "forth8",
+              children: []
+            },
+            {
+              content: "forth9",
+              children: []
+            }
+          ]
+        },
+        {
+          content: "first",
+          children: [
+            {
+              content: "forth 6",
+              children: []
+            },
+            {
+              content: "forth 5",
+              children: []
+            },
+            {
+              content: "forth 4",
+              children: [
+                {
+                  content: "forth 1",
+                  children: []
+                },
+                {
+                  content: "forth 2",
+                  children: []
+                },
+                {
+                  content: "forth 3",
+                  children: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Tree tree={markLastItem(tree)} index={1} />
     </div>
   );
-}
+};
 
 export default App;
