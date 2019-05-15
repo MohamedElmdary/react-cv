@@ -8,10 +8,10 @@ interface Props {
 }
 
 class Tree extends Component<Props> {
-  public render() {
+  public render(): JSX.Element {
     const styles: any = {};
     if (this.props.index) {
-      styles.marginLeft = "23px";
+      styles.marginLeft = "24px";
       styles.marginTop = "-5px";
     }
     return (
@@ -21,8 +21,12 @@ class Tree extends Component<Props> {
           ...styles
         }}
       >
-        {this.props.tree.map(node => (
-          <Branch branch={node} key={node.content} index={this.props.index} />
+        {this.props.tree.map((node, index) => (
+          <Branch
+            branch={node}
+            key={node.content.toString() + index}
+            index={this.props.index}
+          />
         ))}
       </div>
     );

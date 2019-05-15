@@ -1,5 +1,18 @@
+export enum ElementType {
+  H1,
+  H2,
+  H3,
+  P,
+  A
+}
+
+export interface Content {
+  elementType: ElementType;
+  value: string;
+}
+
 export interface Node {
-  content: string;
-  children: Node[];
+  content: Content[];
+  children?: Node[];
   lastItem?: Boolean;
 }

@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { Node } from "../../interfaces/node";
+import React, { Component, Fragment } from "react";
+import { Node, Content } from "../../interfaces/node";
 import Tree from "./tree";
 import "./branch.css";
+import NodeSelector from "./nodeSelector";
 
 interface Props {
   branch: Node;
@@ -20,7 +21,7 @@ class Branch extends Component<Props> {
             width: `2px`,
             background: "white",
             zIndex: 9,
-            top: "40px",
+            top: "36px",
             left: `-2px`
           }}
         />
@@ -32,7 +33,9 @@ class Branch extends Component<Props> {
         <div
           style={{
             paddingLeft: "35px",
-            paddingTop: "15px"
+            paddingTop: "15px",
+            position: "relative",
+            top: "5px"
           }}
         >
           <p style={{ position: "relative" }}>
@@ -48,10 +51,21 @@ class Branch extends Component<Props> {
                 transform: "rotate(45deg)"
               }}
             />
-            {this.props.branch.content}
           </p>
+          <div>
+            {this.props.branch.content.map((node: Content, i) => {
+              return (
+                <Fragment key={i}>
+                  <NodeSelector node={node} />
+                </Fragment>
+              );
+            })}
+          </div>
         </div>
-        <Tree tree={this.props.branch.children} index={this.props.index + 1} />
+        <Tree
+          tree={this.props.branch.children || []}
+          index={this.props.index + 1}
+        />
       </div>
     );
   }

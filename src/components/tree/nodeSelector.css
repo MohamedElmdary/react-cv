@@ -1,0 +1,43 @@
+.h3,
+.h4,
+.h5,
+.p,
+.a {
+  word-break: break-all;
+  display: inline !important;
+}
+
+.h3,
+.h4,
+.h5 {
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  top: -2px;
+}
+
+.h4 {
+  font-weight: 700;
+  color: #444;
+  font-size: 18px;
+}
+
+.h5 {
+  font-weight: 600;
+  color: #6c6b6b;
+  font-size: 16px;
+}
+
+.p {
+  font-weight: 300;
+  color: #000;
+}
+
+.a {
+  color: dodgerblue;
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+}
