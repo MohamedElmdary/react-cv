@@ -11,10 +11,25 @@ class Branch extends Component<Props> {
   public render() {
     let remove = null;
     if (this.props.branch.lastItem) {
-      remove = <div>last item</div>;
+      const width = 50 * this.props.index - 20 * this.props.index;
+      remove = (
+        <div
+          style={{
+            position: "absolute",
+            height: "calc(100% - 50px)",
+            width: `${width}px`,
+            background: "blue",
+            zIndex: 9,
+            top: "50px",
+            left: `${-width / 2}px`
+          }}
+        >
+          sda
+        </div>
+      );
     }
     return (
-      <>
+      <div style={{ position: "relative" }}>
         {remove}
         <div
           style={{
@@ -23,7 +38,6 @@ class Branch extends Component<Props> {
           }}
         >
           <p style={{ position: "relative" }}>
-            {" "}
             <span
               style={{
                 position: "absolute",
@@ -38,7 +52,7 @@ class Branch extends Component<Props> {
           </p>
         </div>
         <Tree tree={this.props.branch.children} index={this.props.index + 1} />
-      </>
+      </div>
     );
   }
 }
