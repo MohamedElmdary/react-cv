@@ -12,14 +12,29 @@ interface Props {
 class Branch extends Component<Props> {
   public render() {
     let remove = null;
-    if (this.props.branch.lastItem) {
+    if (this.props.branch.branch) {
+      remove = (
+        <div
+          style={{
+            position: "absolute",
+            height: `calc(${this.props.branch.branch}00% - ${this.props.branch
+              .branch * 5}px)`,
+            width: `2px`,
+            background: "#fafafa",
+            zIndex: 9,
+            bottom: "0",
+            left: `-28px`
+          }}
+        />
+      );
+    } else if (this.props.branch.lastItem) {
       remove = (
         <div
           style={{
             position: "absolute",
             height: "calc(100% - 30px)",
             width: `2px`,
-            background: "white",
+            background: "#fafafa",
             zIndex: 9,
             top: "36px",
             left: `-2px`
@@ -52,7 +67,7 @@ class Branch extends Component<Props> {
               }}
             />
           </p>
-          <div>
+          <div style={{ position: "relative", top: "-3px" }}>
             {this.props.branch.content.map((node: Content, i) => {
               return (
                 <Fragment key={i}>

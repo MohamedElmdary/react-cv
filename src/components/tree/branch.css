@@ -9,3 +9,14 @@
   transform: rotate(-45deg);
   transform-origin: 100%;
 }
+
+.node-point::before {
+  content: "";
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  background: white;
+  top: 2px;
+  left: 2px;
+  z-index: 99;
+}

@@ -15,4 +15,5 @@ export interface Node {
   content: Content[];
   children?: Node[];
   lastItem?: Boolean;
+  branch?: number;
 }

@@ -13,6 +13,10 @@ class Tree extends Component<Props> {
     if (this.props.index) {
       styles.marginLeft = "24px";
       styles.marginTop = "-5px";
+    } else {
+      styles.position = "relative";
+      styles.left = "-7px";
+      styles.top = "-24px";
     }
     return (
       <div
