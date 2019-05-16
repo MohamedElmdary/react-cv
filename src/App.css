@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: #fff;
   margin-top: 15px;
 }
 
@@ -9,12 +9,12 @@ body {
   padding-left: 20px;
 }
 
-/* @media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .container {
     width: 90% !important;
     flex-wrap: wrap;
   }
-} */
+}
 
 .profile-image {
   position: relative;
@@ -64,13 +64,12 @@ body {
 .profile-info p:nth-of-type(2) a,
 .profile-info p:nth-of-type(3) a {
   margin-left: 10px;
-  background: #ccc;
+  background: #c0392b;
   border-radius: 5px;
   padding: 2px 5px;
   text-decoration: none;
-  color: #333;
-  font-weight: 300;
-  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
 }
 
 .profile-info p:nth-of-type(3) a {

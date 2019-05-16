@@ -20,7 +20,7 @@ class Branch extends Component<Props> {
             height: `calc(${this.props.branch.branch}00% - ${this.props.branch
               .branch * 5}px)`,
             width: `2px`,
-            background: "#fafafa",
+            background: "#fff",
             zIndex: 9,
             bottom: "0",
             left: `-28px`
@@ -34,7 +34,7 @@ class Branch extends Component<Props> {
             position: "absolute",
             height: "calc(100% - 30px)",
             width: `2px`,
-            background: "#fafafa",
+            background: "#fff",
             zIndex: 9,
             top: "36px",
             left: `-2px`

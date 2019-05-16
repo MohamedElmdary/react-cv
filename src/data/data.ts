@@ -257,15 +257,6 @@ export const skills: Node[] = [
         content: [
           {
             elementType: ElementType.H2,
-            value: "Back end"
-          }
-        ],
-        children: [genP("Graphql"), genP("Prisma")]
-      },
-      {
-        content: [
-          {
-            elementType: ElementType.H2,
             value: "Testing"
           }
         ],

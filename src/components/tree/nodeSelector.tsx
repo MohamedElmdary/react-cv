@@ -35,11 +35,11 @@ const NodeSelector: React.FC<Props> = props => {
       return (
         <a
           className="a"
-          href={values[0]}
+          href={values[1]}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {values[1]}
+          {values[0]}
         </a>
       );
   }
