@@ -3,7 +3,7 @@ import "./App.css";
 import profile from "./assets/images/profile.jpg";
 import Tree from "./components/tree/tree";
 import { markLastItem } from "./helpers/markLastItem";
-import { experience, skills } from "./data/data";
+import { experience, skills, projects } from "./data/data";
 import Header from "./components/header";
 
 const App: React.FC = () => {
@@ -14,7 +14,11 @@ const App: React.FC = () => {
     <main>
       <div
         className="container"
-        style={{ display: "flex", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "center"
+        }}
       >
         <div className="profile-image">
           <img src={profile} style={{ maxWidth: "300px" }} />
@@ -47,7 +51,7 @@ const App: React.FC = () => {
       </div>
       <div className="divider" />
       <div className="container">
-        <Header name="Education" />
+        <Header name="Education" center />
         <p>CSED - 2016-2021</p>
         <p>
           A student in Mansoura university, studying computer science and
@@ -63,6 +67,38 @@ const App: React.FC = () => {
       <div className="container">
         <Header name="Technical Skills" />
         <Tree tree={markLastItem(skills)} index={0} />
+      </div>
+      <div className="divider" />
+      <div className="container">
+        <Header name="Projects" />
+        <Tree tree={markLastItem(projects)} index={0} />
+      </div>
+      <div className="divider" />
+      <div className="container">
+        <Header name="Contacts" center />
+        <div className="social-media">
+          <a
+            href="https://www.linkedin.com/in/mohamed-elmdary-949968181/"
+            target="_blank"
+          >
+            <i className="fab fa-linkedin-in" />
+          </a>
+          <a
+            href="https://www.facebook.com/mohamed.rabie.5439087"
+            target="_blank"
+          >
+            <i className="fab fa-facebook-f" />
+          </a>
+          <a
+            href="https://themeforest.net/user/mohamedelmdary/portfolio"
+            target="_blank"
+          >
+            <i className="fab fa-envira" />
+          </a>
+          <a href="https://github.com/MohamedElmdary" target="_blank">
+            <i className="fab fa-github-alt" />
+          </a>
+        </div>
       </div>
     </main>
   );
